@@ -29,7 +29,7 @@
         /* LEFT PANEL */
         .left-panel {
             display: flex;
-            align-items: center;
+            align-items: top;
             justify-content: center;
         }
 
@@ -54,6 +54,8 @@
             display: grid;
             grid-template-rows: auto 1fr;
             gap: 20px;
+            position: fixed;
+            right:0;
         }
 
         /* TOGGLE CHIPS */
@@ -138,14 +140,7 @@
 
             <!-- BOTTOM: TYPOGRAPHY CONTROLLER -->
             <div class="controller-wrapper">
-                <TypographyController target="#demoText" onChange={(values)=> console.log(values)}
-                    features={{
-                    letterSpacing: true,
-                    wordSpacing: false,
-                    lineHeight: true,
-                    contrast: true
-                    }}
-                    />
+                <typography-controller target="#demoText"></typography-controller>
 
             </div>
 
@@ -169,6 +164,8 @@
                 contrast: true
             };
 
+            controller.setFeatures(state);
+
             function toggleFeature(key) {
                 state[key] = !state[key];
                 controller.setFeatures({ [key]: state[key] });
@@ -183,26 +180,15 @@
             chips.contrast.onclick = () => toggleFeature("contrast");
 
             // Initialize chips visually
-            Object.keys(state).forEach(key => chips[key].classList.add("active"));
-        });
-    </script>
-
-
-    <script type="module" src="../src/typography-controller.js"></script>
-    <script>
-        customElements.whenDefined('typography-controller').then(() => {
-            const controller = document.getElementById('controller');
-
-            console.log(controller); // should show TypographyController, not HTMLElement
-
-            controller.setFeatures({
-                letterSpacing: true,
-                wordSpacing: true,
-                lineHeight: false,
-                contrast: true
+            Object.keys(state).forEach(key => {
+                if (state[key]) chips[key].classList.add("active");
+                else chips[key].classList.remove("active");
             });
         });
     </script>
+
+
+    <script type="module" src="../dist/typography-controller.js"></script>
 
 
 </body>

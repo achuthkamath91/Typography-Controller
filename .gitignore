@@ -4,6 +4,9 @@ node_modules/
 # Build outputs
 dist/
 
+# Test files
+demo/test.html
+
 # Logs
 *.log
 npm-debug.log*

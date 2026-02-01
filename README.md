@@ -13,6 +13,8 @@ font size, letter spacing, word spacing, line height, contrast, and font family.
 - Contrast: Apply a contrast filter (50-200%)
 - Font Family: Choose from predefined fonts (Arial, Georgia, Courier New, Verdana)
 
+![alt text](image.png)
+
 ## Usage
 
 1. Include the `typography-controller.js` script in your HTML file:
@@ -130,4 +132,4 @@ export default function App() {
 
 ## License
 
-[Add license if applicable]
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
