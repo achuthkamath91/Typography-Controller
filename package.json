@@ -34,13 +34,13 @@
     "frontend",
     "javascript"
   ],
-  "homepage": "https://github.com/achuthkamath/typography-controller",
+  "homepage": "https://github.com/achuthkamath91/Typography-Controller",
   "repository": {
     "type": "git",
-    "url": "https://github.com/achuthkamath/typography-controller.git"
+    "url": "https://github.com/achuthkamath91/Typography-Controller.git"
   },
   "bugs": {
-    "url": "https://github.com/achuthkamath/typography-controller/issues"
+    "url": "https://github.com/achuthkamath91/Typography-Controller/issues"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
