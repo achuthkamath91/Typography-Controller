@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Typography Controller Demo</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #dbeafe, #eff6ff);
+            color: #1e293b;
+            font-family: system-ui, sans-serif;
+        }
+
+        .page-layout {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 32px;
+            padding: 40px;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* LEFT PANEL */
+        .left-panel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .preview {
+            padding: 28px 32px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            max-width: 600px;
+        }
+
+        #demoText {
+            margin: 0;
+            color: #0f172a;
+            font-size: 32px;
+            line-height: 1.4;
+        }
+
+        /* RIGHT PANEL */
+        .right-panel {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            gap: 20px;
+        }
+
+        /* TOGGLE CHIPS */
+        .feature-toggles {
+            padding: 16px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .toggle-title {
+            width: 100%;
+            font-size: 13px;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 4px;
+        }
+
+        .chip {
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
+            user-select: none;
+            background: #e2e8f0;
+            color: #1e293b;
+            border: 1px solid #cbd5e1;
+            transition: all 0.2s ease;
+        }
+
+        .chip.active {
+            background: #3b82f6;
+            color: white;
+            border-color: #2563eb;
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35);
+        }
+
+        /* CONTROLLER */
+        .controller-wrapper {
+            padding: 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+
+        @media (max-width: 800px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-layout">
+
+        <!-- LEFT SIDE: TEXT PREVIEW -->
+        <div class="left-panel">
+            <div class="preview">
+                <h2 id="demoText">
+                    Typography should feel like breathing space, not noise.
+                </h2>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE: TOGGLES + CONTROLLER -->
+        <div class="right-panel">
+
+            <!-- TOP: FEATURE TOGGLE CHIPS -->
+            <div class="feature-toggles">
+                <div class="toggle-title">Toggle Features</div>
+                <div class="chip" id="chipLetter">Letter Spacing</div>
+                <div class="chip" id="chipWord">Word Spacing</div>
+                <div class="chip" id="chipLine">Line Height</div>
+                <div class="chip" id="chipContrast">Contrast</div>
+            </div>
+
+            <!-- BOTTOM: TYPOGRAPHY CONTROLLER -->
+            <div class="controller-wrapper">
+                <TypographyController target="#demoText" onChange={(values)=> console.log(values)}
+                    features={{
+                    letterSpacing: true,
+                    wordSpacing: false,
+                    lineHeight: true,
+                    contrast: true
+                    }}
+                    />
+
+            </div>
+
+        </div>
+    </div>
+    <script>
+        customElements.whenDefined("typography-controller").then(() => {
+            const controller = document.querySelector("typography-controller");
+
+            const chips = {
+                letterSpacing: document.getElementById("chipLetter"),
+                wordSpacing: document.getElementById("chipWord"),
+                lineHeight: document.getElementById("chipLine"),
+                contrast: document.getElementById("chipContrast")
+            };
+
+            const state = {
+                letterSpacing: true,
+                wordSpacing: true,
+                lineHeight: true,
+                contrast: true
+            };
+
+            function toggleFeature(key) {
+                state[key] = !state[key];
+                controller.setFeatures({ [key]: state[key] });
+
+                if (state[key]) chips[key].classList.add("active");
+                else chips[key].classList.remove("active");
+            }
+
+            chips.letterSpacing.onclick = () => toggleFeature("letterSpacing");
+            chips.wordSpacing.onclick = () => toggleFeature("wordSpacing");
+            chips.lineHeight.onclick = () => toggleFeature("lineHeight");
+            chips.contrast.onclick = () => toggleFeature("contrast");
+
+            // Initialize chips visually
+            Object.keys(state).forEach(key => chips[key].classList.add("active"));
+        });
+    </script>
+
+
+    <script type="module" src="../src/typography-controller.js"></script>
+    <script>
+        customElements.whenDefined('typography-controller').then(() => {
+            const controller = document.getElementById('controller');
+
+            console.log(controller); // should show TypographyController, not HTMLElement
+
+            controller.setFeatures({
+                letterSpacing: true,
+                wordSpacing: true,
+                lineHeight: false,
+                contrast: true
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

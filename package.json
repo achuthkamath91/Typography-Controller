@@ -1,0 +1,49 @@
+{
+  "name": "typography-controller",
+  "version": "1.0.0",
+  "description": "A framework-agnostic Web Component that provides a beautiful typography control panel with sliders for font size, letter spacing, word spacing, line height, contrast, and font family.",
+  "author": "Achuth Kamath",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/typography-controller.js",
+  "module": "dist/typography-controller.js",
+  "source": "src/typography-controller.js",
+  "exports": {
+    ".": "./dist/typography-controller.js",
+    "./react": "./dist/react-wrapper.js"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "web-components",
+    "custom-elements",
+    "typography",
+    "ui",
+    "ui-library",
+    "accessibility",
+    "design-system",
+    "frontend",
+    "javascript"
+  ],
+  "homepage": "https://github.com/achuthkamath/typography-controller",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/achuthkamath/typography-controller.git"
+  },
+  "bugs": {
+    "url": "https://github.com/achuthkamath/typography-controller/issues"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.2",
+    "vite": "^5.4.21"
+  }
+}
