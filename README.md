@@ -13,7 +13,7 @@ font size, letter spacing, word spacing, line height, contrast, and font family.
 - Contrast: Apply a contrast filter (50-200%)
 - Font Family: Choose from predefined fonts (Arial, Georgia, Courier New, Verdana)
 
-![alt text](image.png)
+![alt text](https://raw.githubusercontent.com/achuthkamath91/Typography-Controller/main/image.png)
 
 ## Usage
 
