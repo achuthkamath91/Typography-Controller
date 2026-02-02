@@ -1,10 +1,11 @@
 # Typography Controller
 
-A framework-agnostic Web Component that provides a beautiful typography control panel:
-font size, letter spacing, word spacing, line height, contrast, and font family.
+A lightweight, framework‑agnostic Web Component that provides a beautiful, interactive typography control panel.
+Adjust font size, letter spacing, word spacing, line height, contrast, and font family — all in real time.
 
+![alt text](https://raw.githubusercontent.com/achuthkamath91/Typography-Controller/main/image.png)
 
-## Features
+## 🚀 Features
 
 - Font Size: Adjust the font size with a slider (range: 12-48px)
 - Letter Spacing: Control the spacing between characters
@@ -12,56 +13,55 @@ font size, letter spacing, word spacing, line height, contrast, and font family.
 - Line Height: Set the line height (1-3)
 - Contrast: Apply a contrast filter (50-200%)
 - Font Family: Choose from predefined fonts (Arial, Georgia, Courier New, Verdana)
+- Framework‑agnostic — Works in HTML, React, Vue, Svelte, etc.
+- Public API — getValues(), setValues(), setFeatures(), and change events
 
-![alt text](https://raw.githubusercontent.com/achuthkamath91/Typography-Controller/main/image.png)
+## 📦 Installation
+
+```bash
+npm install typography-controller
+```
 
 ## Usage
 
-1. Include the `typography-controller.js` script in your HTML file:
+1. Import the component
 
 ```html
-<script src="typography-controller.js"></script>
+import "typography-controller/dist/typography-controller.js";
 ```
 
 2. Add the `<typography-controller>` element to your HTML, specifying the target element via the `target` attribute:
 
 ```html
+<h2 id="myText">This is the text to style.</h2>
 <typography-controller target="#myText"></typography-controller>
-<div id="myText">This is the text to style.</div>
 ```
 
-The controller will automatically apply the selected styles to the target element.
-
-## API
-
-### Methods
-
-- `getValues()`: Returns an object with current values.
-- `setValues(values)`: Sets the values from an object.
-
-### Events
-
-- `change`: Fired when any control changes, with `detail` containing the current values.
-
-### Using it in plain HTML without bundlers
+## 🌐 Using via CDN (no bundler)
 
 ```
-<typography-controller></typography-controller>
-
 <script type="module" src="https://unpkg.com/typography-controller/dist/typography-controller.js"></script>
+
+<h2 id="demo">Hello World</h2>
+<typography-controller target="#demo"></typography-controller>
 ```
 
-### Using it in Vanilla JS (Vite, Webpack, Parcel, plain HTML)
+## 📚 JavaScript API
+
+Methods
+|  |  | 
+| getValues() |  | 
+| setValues(values) |  | 
+| setFeatures(features) |  | 
+
+Events
+|  |  | 
+| change | event.detail | 
+
+
+Example
 
 ```
-  import "typography-controller/dist/typography-controller.js";
-  <typography-controller></typography-controller>
-
-```
-
-### JavaScript API Usage
-
-```javascript
 const controller = document.querySelector("typography-controller");
 
 controller.addEventListener("change", (e) => {
@@ -75,33 +75,31 @@ controller.setValues({
 });
 ```
 
-### React usage
+## ⚛️ React Usage
 
+Basic usage
 ```
-import { TypographyController } from "./react-wrapper/TypographyController";
+import "typography-controller/dist/typography-controller.js";
 
 export default function App() {
   return (
     <div>
       <h2 id="demoText">Typography should feel like breathing space.</h2>
 
-      <TypographyController
+      <typography-controller
         target="#demoText"
         hide-letter-spacing
         onChange={(e) => console.log(e.detail)}
-      />
+      ></typography-controller>
     </div>
   );
 }
-
 ```
 
-### Support JS API (setFeatures, setValues) in React
-
-React reference
+Using JS API (setFeatures, setValues) with refs
 ```
 import { useRef, useEffect } from "react";
-import { TypographyController } from "./react-wrapper/TypographyController";
+import "typography-controller/dist/typography-controller.js";
 
 export default function App() {
   const ref = useRef();
@@ -121,17 +119,15 @@ export default function App() {
     <>
       <h2 id="demoText">Hello world</h2>
 
-      <TypographyController
+      <typography-controller
         ref={ref}
         target="#demoText"
         onChange={(e) => console.log(e.detail)}
-      />
+      ></typography-controller>
     </>
   );
 }
-
 ```
-
 
 ## License
 
