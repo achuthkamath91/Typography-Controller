@@ -43,6 +43,22 @@ The controller will automatically apply the selected styles to the target elemen
 
 - `change`: Fired when any control changes, with `detail` containing the current values.
 
+### Using it in plain HTML without bundlers
+
+```
+<typography-controller></typography-controller>
+
+<script type="module" src="https://unpkg.com/typography-controller/dist/typography-controller.js"></script>
+```
+
+### Using it in Vanilla JS (Vite, Webpack, Parcel, plain HTML)
+
+```
+  import "typography-controller/dist/typography-controller.js";
+  <typography-controller></typography-controller>
+
+```
+
 ### JavaScript API Usage
 
 ```javascript
@@ -58,10 +74,6 @@ controller.setValues({
   fontFamily: "Georgia"
 });
 ```
-
-## Example
-
-See `index.html` for a complete example.
 
 ### React usage
 
