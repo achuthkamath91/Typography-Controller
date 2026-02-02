@@ -48,15 +48,17 @@ import "typography-controller/dist/typography-controller.js";
 
 ## 📚 JavaScript API
 
-Methods
-|  |  | 
-| getValues() |  | 
-| setValues(values) |  | 
-| setFeatures(features) |  | 
+### Methods
+| Method | Description | Parameters/Return |
+|--------|-------------|-------------------|
+| getValues() | Returns the current typography values as an object. | Returns: `{ fontSize: number, letterSpacing: number, wordSpacing: number, lineHeight: number, contrast: number, fontFamily: string }` |
+| setValues(values) | Sets the typography values programmatically. | Parameters: `values` (object with keys like `fontSize`, `letterSpacing`, etc.) |
+| setFeatures(features) | Enables or disables specific features (e.g., sliders). | Parameters: `features` (object with boolean keys like `letterSpacing: true`) |
 
-Events
-|  |  | 
-| change | event.detail | 
+### Events
+| Event | Description | Detail |
+|-------|-------------|--------|
+| change | Fired whenever a value changes via the UI or API. | `event.detail`: Object containing updated values (same as `getValues()` return). |
 
 
 Example
