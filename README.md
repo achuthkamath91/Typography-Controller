@@ -63,15 +63,6 @@ controller.setValues({
 
 See `index.html` for a complete example.
 
-### Quick note on bundling (Vite/Rollup)
-
-You can start without bundling (just `src/` + `demo/`), then later add:
-
-- `vite.config.js` or `rollup.config.js` to build `src/typography-controller.js` into `dist/typography-controller.js`
-- `package.json` with `"module": "dist/typography-controller.js"`
-
-If you want, next step we can wire up a minimal Vite config and `package.json` ready for `npm publish`.
-
 ### React usage
 
 ```
