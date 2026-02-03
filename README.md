@@ -12,7 +12,7 @@ Adjust font size, letter spacing, word spacing, line height, contrast, and font 
 - Word Spacing: Adjust spacing between words.
 - Line Height: Set the line height (1-3).
 - Contrast: Apply a contrast filter (50-200%).
-- Font Family: Choose from predefined fonts (Arial, Georgia, Courier New, Verdana)
+- Font Family: Choose from predefined fonts (Arial, Georgia, Courier New, Verdana).
 - Framework‑agnostic — Works in HTML, React, Vue, Svelte, etc.
 - Public API — getValues(), setValues(), setFeatures(), and change events.
 
