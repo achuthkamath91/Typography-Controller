@@ -10,6 +10,7 @@ export default defineConfig({
       fileName: "react-wrapper",
       formats: ["es"]
     },
+    outDir: "dist/react",
     rollupOptions: {
       external: ["react", "react-dom", "@lit/react"]
     }
