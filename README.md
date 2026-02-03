@@ -7,7 +7,7 @@ Adjust font size, letter spacing, word spacing, line height, contrast, and font 
 
 ## 🚀 Features
 
-- Font Size: Adjust the font size with a slider (range: 12-48px)
+- Font Size: Adjust the font size with a slider (range: 12-48px).
 - Letter Spacing: Control the spacing between characters.
 - Word Spacing: Adjust spacing between words.
 - Line Height: Set the line height (1-3).
