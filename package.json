@@ -5,12 +5,12 @@
   "author": "Achuth Kamath",
   "license": "MIT",
   "type": "module",
-  "main": "dist/typography-controller.js",
-  "module": "dist/typography-controller.js",
+  "main": "dist/web/typography-controller.js",
+  "module": "dist/web/typography-controller.js",
   "source": "src/typography-controller.js",
   "exports": {
-    ".": "./dist/typography-controller.js",
-    "./react": "./dist/react-wrapper.js"
+    ".": "./dist/web/typography-controller.js",
+    "./react": "./dist/react/react-wrapper.js"
   },
   "files": [
     "dist",
@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && vite build --config react.vite.config.js",
     "preview": "vite preview"
   },
   "keywords": [

@@ -6,6 +6,7 @@ export default defineConfig({
       entry: "src/typography-controller.js",
       name: "TypographyController",
       fileName: "typography-controller"
-    }
+    },
+     outDir: "dist/web",
   }
 });
