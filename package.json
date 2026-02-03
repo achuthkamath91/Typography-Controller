@@ -1,6 +1,6 @@
 {
   "name": "typography-controller",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A framework-agnostic Web Component that provides a beautiful typography control panel with sliders for font size, letter spacing, word spacing, line height, contrast, and font family.",
   "author": "Achuth Kamath",
   "license": "MIT",
