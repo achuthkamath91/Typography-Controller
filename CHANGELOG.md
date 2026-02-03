@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/achuthkamath91/Typography-Controller/compare/v1.0.0...v1.0.1) (2026-02-03)
+
+
+### Bug Fixes
+
+* add react wrapper build output ([1b40706](https://github.com/achuthkamath91/Typography-Controller/commit/1b40706bf9d5ef9b62376b79ee5e84189b5637c5))
+
 # 1.0.0 (2026-02-01)
 
 
