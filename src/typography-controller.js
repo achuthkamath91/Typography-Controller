@@ -1,3 +1,5 @@
+import { TypographyState } from "./TypographyState.js";
+
 class TypographyController extends HTMLElement {
   constructor() {
     super();
@@ -96,65 +98,154 @@ class TypographyController extends HTMLElement {
         }
 
         select:focus {
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
+          border-radius: 999px;
+        }
+        
+        /* Highlight the track when focused */
+        input[type="range"]:focus {
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
+          border-radius: 999px;
+        }
+
+        /* Glow effect on the thumb when focused */
+        input[type="range"]:focus::-webkit-slider-thumb {
+          box-shadow:
+            0 0 0 4px rgba(37, 99, 235, 0.35),
+            0 4px 10px rgba(0, 0, 0, 0.25);
           border-color: #2563eb;
-          box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Firefox thumb focus */
+        input[type="range"]::-moz-range-thumb:focus {
+          box-shadow:
+            0 0 0 4px rgba(37, 99, 235, 0.35),
+            0 4px 10px rgba(0, 0, 0, 0.25);
+          border-color: #2563eb;
+        }
+        input[type="range"]:hover::-webkit-slider-thumb {
+          transform: scale(1.05);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
         }
       </style>
 
       <div class="header">
-        <div class="title">Typography Controls</div>
-        <div class="badge">Web Component</div>
+        <h2 class="title" id="controllerTitle">Typography Controls</h2>
+        <span class="badge">v1.0.0</span>
       </div>
 
-      <div class="group" id="groupFontSize">
+      <!-- Live region for announcements -->
+      <div aria-live="polite" class="sr-only" id="liveRegion"></div>
+
+      <div class="group" id="groupFontSize" role="group" aria-labelledby="labelFontSize">
         <div class="label-row">
-          <label for="fontSize">Font size</label>
-          <span class="value" id="fontSizeValue"></span>
+          <label id="labelFontSize" for="fontSize">Font size</label>
+          <span class="value" id="fontSizeValue" aria-hidden="true"></span>
         </div>
-        <input type="range" id="fontSize" min="12" max="60" value="24">
+
+        <input
+          type="range"
+          id="fontSize"
+          min="12"
+          max="60"
+          value="24"
+          aria-valuemin="12"
+          aria-valuemax="60"
+          aria-valuenow="24"
+          aria-labelledby="labelFontSize"
+        >
       </div>
 
-      <div class="group" id="groupLetterSpacing">
+      <div class="group" id="groupLetterSpacing" role="group" aria-labelledby="labelLetterSpacing">
         <div class="label-row">
-          <label for="letterSpacing">Letter spacing</label>
-          <span class="value" id="letterSpacingValue"></span>
+          <label id="labelLetterSpacing" for="letterSpacing">Letter spacing</label>
+          <span class="value" id="letterSpacingValue" aria-hidden="true"></span>
         </div>
-        <input type="range" id="letterSpacing" min="0" max="20" value="0">
+
+        <input
+          type="range"
+          id="letterSpacing"
+          min="0"
+          max="20"
+          value="0"
+          aria-valuemin="0"
+          aria-valuemax="20"
+          aria-valuenow="0"
+          aria-labelledby="labelLetterSpacing"
+        >
       </div>
 
-      <div class="group" id="groupWordSpacing">
+      <div class="group" id="groupWordSpacing" role="group" aria-labelledby="labelWordSpacing">
         <div class="label-row">
-          <label for="wordSpacing">Word spacing</label>
-          <span class="value" id="wordSpacingValue"></span>
+          <label id="labelWordSpacing" for="wordSpacing">Word spacing</label>
+          <span class="value" id="wordSpacingValue" aria-hidden="true"></span>
         </div>
-        <input type="range" id="wordSpacing" min="0" max="40" value="0">
+
+        <input
+          type="range"
+          id="wordSpacing"
+          min="0"
+          max="40"
+          value="0"
+          aria-valuemin="0"
+          aria-valuemax="40"
+          aria-valuenow="0"
+          aria-labelledby="labelWordSpacing"
+        >
       </div>
 
-      <div class="group" id="groupLineHeight">
+      <div class="group" id="groupLineHeight" role="group" aria-labelledby="labelLineHeight">
         <div class="label-row">
-          <label for="lineHeight">Line height</label>
-          <span class="value" id="lineHeightValue"></span>
+          <label id="labelLineHeight" for="lineHeight">Line height</label>
+          <span class="value" id="lineHeightValue" aria-hidden="true"></span>
         </div>
-        <input type="range" id="lineHeight" min="1" max="3" step="0.1" value="1.5">
+
+        <input
+          type="range"
+          id="lineHeight"
+          min="1"
+          max="3"
+          step="0.1"
+          value="1.5"
+          aria-valuemin="1"
+          aria-valuemax="3"
+          aria-valuenow="1.5"
+          aria-labelledby="labelLineHeight"
+        >
       </div>
 
-      <div class="group" id="groupContrast">
+      <div class="group" id="groupContrast" role="group" aria-labelledby="labelContrast">
         <div class="label-row">
-          <label for="contrast">Contrast</label>
-          <span class="value" id="contrastValue"></span>
+          <label id="labelContrast" for="contrast">Contrast</label>
+          <span class="value" id="contrastValue" aria-hidden="true"></span>
         </div>
-        <input type="range" id="contrast" min="50" max="200" value="100">
+
+        <input
+          type="range"
+          id="contrast"
+          min="50"
+          max="200"
+          value="100"
+          aria-valuemin="50"
+          aria-valuemax="200"
+          aria-valuenow="100"
+          aria-labelledby="labelContrast"
+        >
       </div>
 
-      <div class="group" id="groupFontFamily">
+      <div class="group" id="groupFontFamily" role="group" aria-labelledby="labelFontFamily">
         <div class="label-row">
-          <label for="fontFamily">Font family</label>
+          <label id="labelFontFamily" for="fontFamily">Font family</label>
         </div>
-        <select id="fontFamily">
+
+        <select id="fontFamily" aria-labelledby="labelFontFamily">
           <option value="system-ui, sans-serif">System</option>
           <option value="Georgia, serif">Serif</option>
           <option value="'Courier New', monospace">Monospace</option>
           <option value="Verdana, sans-serif">Verdana</option>
+          <option value="inherit">Inherit</option>
         </select>
       </div>
     `;
@@ -250,12 +341,21 @@ class TypographyController extends HTMLElement {
   }
 
   setValues(values = {}) {
+
     if (values.fontSize !== undefined) this.fontSize.value = values.fontSize;
     if (values.letterSpacing !== undefined) this.letterSpacing.value = values.letterSpacing;
     if (values.wordSpacing !== undefined) this.wordSpacing.value = values.wordSpacing;
     if (values.lineHeight !== undefined) this.lineHeight.value = values.lineHeight;
     if (values.contrast !== undefined) this.contrast.value = values.contrast;
-    if (values.fontFamily !== undefined) this.fontFamily.value = values.fontFamily;
+    if (values.fontFamily !== undefined) {
+      if (values.fontFamily === "inherit" && target) {
+        const computed = getComputedStyle(target).fontFamily;
+        this.fontFamily.value = computed;
+      } else {
+        this.fontFamily.value = values.fontFamily;
+      }
+    }
+
 
     this.update();
   }

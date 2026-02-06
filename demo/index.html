@@ -40,6 +40,7 @@
             backdrop-filter: blur(12px);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
             max-width: 600px;
+            width: 100%;
         }
 
         #demoText {
@@ -55,7 +56,7 @@
             grid-template-rows: auto 1fr;
             gap: 20px;
             position: fixed;
-            right:0;
+            right: 0;
         }
 
         /* TOGGLE CHIPS */
@@ -120,9 +121,44 @@
         <!-- LEFT SIDE: TEXT PREVIEW -->
         <div class="left-panel">
             <div class="preview">
-                <h2 id="demoText">
-                    Typography should feel like breathing space, not noise.
-                </h2>
+                <section id="demoText">
+                    <h1>Lorem Ipsum Dolor Sit Amet</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae
+                        scelerisque nibh. Integer ac sem vel augue faucibus placerat. Duis
+                        convallis, urna at tincidunt dictum, neque lorem suscipit elit, vitae
+                        volutpat justo lorem non nisl. Vivamus id velit ac sapien facilisis
+                        imperdiet. Suspendisse potenti. Curabitur ac nibh sed urna tincidunt
+                        fermentum. Pellentesque habitant morbi tristique senectus et netus et
+                        malesuada fames ac turpis egestas.
+                    </p>
+
+                    <p>
+                        Phasellus interdum, magna sed cursus aliquet, lacus sem fermentum
+                        tortor, vitae tincidunt lorem velit non risus. Donec vel mauris
+                        vulputate, faucibus ipsum id, pharetra ipsum. Sed id orci non tellus
+                        tincidunt tincidunt. Integer nec libero sed nisl placerat feugiat.
+                        Maecenas id lorem vitae erat dignissim imperdiet. Sed non risus
+                        pharetra, volutpat justo vitae, dictum lorem.
+                    </p>
+
+                    <h2>Subheading Example</h2>
+                    <p>
+                        Aliquam erat volutpat. Donec id urna vel justo hendrerit tincidunt.
+                        Vivamus nec sapien id neque viverra tincidunt. Suspendisse potenti.
+                        Curabitur sit amet sem sed arcu porta fermentum. Etiam id lorem
+                        malesuada, dictum lorem id, aliquet libero. Sed sed risus id urna
+                        feugiat tincidunt. Integer id lorem ac sapien faucibus tincidunt.
+                    </p>
+
+                    <p>
+                        Morbi ac mi vel augue gravida tincidunt. Sed euismod, urna vel
+                        tincidunt bibendum, turpis lorem consequat est, vitae facilisis arcu
+                        turpis non lorem. Vestibulum ante ipsum primis in faucibus orci luctus
+                        et ultrices posuere cubilia curae; Integer non erat nec nulla
+                        ullamcorper fermentum. Donec at sapien non lorem aliquet volutpat.
+                    </p>
+                </section>
             </div>
         </div>
 
@@ -188,7 +224,7 @@
     </script>
 
 
-    <script type="module" src="../dist/typography-controller.js"></script>
+    <script type="module" src="../src/typography-controller.js"></script>
 
 
 </body>

@@ -15,6 +15,7 @@ Adjust font size, letter spacing, word spacing, line height, contrast, and font 
 - Font Family: Choose from predefined fonts (Arial, Georgia, Courier New, Verdana).
 - Framework‑agnostic — Works in HTML, React, Vue, Svelte, etc.
 - Public API — getValues(), setValues(), setFeatures(), and change events.
+- EAA - This component is designed with full EAA‑aligned accessibility practices, including keyboard navigation, ARIA labeling, and perceivable focus states.
 
 ## 📦 Installation
 
