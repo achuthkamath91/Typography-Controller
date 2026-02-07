@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/achuthkamath91/Typography-Controller/compare/v1.2.0...v1.2.1) (2026-02-07)
+
+
+### Bug Fixes
+
+* correct package format ([#9](https://github.com/achuthkamath91/Typography-Controller/issues/9)) ([b2ac15e](https://github.com/achuthkamath91/Typography-Controller/commit/b2ac15e77029f11f20a13a88794de558e53a7780))
+
 # [1.2.0](https://github.com/achuthkamath91/Typography-Controller/compare/v1.1.0...v1.2.0) (2026-02-07)
 
 
