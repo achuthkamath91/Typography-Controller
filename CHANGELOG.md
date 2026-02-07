@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/achuthkamath91/Typography-Controller/compare/v1.1.0...v1.2.0) (2026-02-07)
+
+
+### Features
+
+* some restructuring and Accessibility touchups ([9e6a721](https://github.com/achuthkamath91/Typography-Controller/commit/9e6a7218618c8035984f691b3d54de4249b45d34))
+
 # [1.1.0](https://github.com/achuthkamath91/Typography-Controller/compare/v1.0.3...v1.1.0) (2026-02-06)
 
 
