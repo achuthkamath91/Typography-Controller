@@ -55,8 +55,6 @@
             display: grid;
             grid-template-rows: auto 1fr;
             gap: 20px;
-            position: fixed;
-            right: 0;
         }
 
         /* TOGGLE CHIPS */
@@ -70,6 +68,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+            max-width: 235px;            
         }
 
         .toggle-title {
@@ -172,6 +171,7 @@
                 <div class="chip" id="chipWord">Word Spacing</div>
                 <div class="chip" id="chipLine">Line Height</div>
                 <div class="chip" id="chipContrast">Contrast</div>
+                <div class="chip" id="chipFamily">Font Family</div>
             </div>
 
             <!-- BOTTOM: TYPOGRAPHY CONTROLLER -->
@@ -190,14 +190,16 @@
                 letterSpacing: document.getElementById("chipLetter"),
                 wordSpacing: document.getElementById("chipWord"),
                 lineHeight: document.getElementById("chipLine"),
-                contrast: document.getElementById("chipContrast")
+                contrast: document.getElementById("chipContrast"),
+                fontFamily: document.getElementById("chipFamily")
             };
 
             const state = {
                 letterSpacing: true,
                 wordSpacing: true,
                 lineHeight: true,
-                contrast: true
+                contrast: true,
+                fontFamily: true
             };
 
             controller.setFeatures(state);
@@ -214,6 +216,7 @@
             chips.wordSpacing.onclick = () => toggleFeature("wordSpacing");
             chips.lineHeight.onclick = () => toggleFeature("lineHeight");
             chips.contrast.onclick = () => toggleFeature("contrast");
+            chips.fontFamily.onclick = () => toggleFeature("fontFamily");
 
             // Initialize chips visually
             Object.keys(state).forEach(key => {
