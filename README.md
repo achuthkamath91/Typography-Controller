@@ -3,7 +3,7 @@
 A lightweight, framework‑agnostic Web Component that provides a beautiful, interactive typography control panel.
 Adjust font size, letter spacing, word spacing, line height, contrast, and font family — all in real time.
 
-![alt text](https://raw.githubusercontent.com/achuthkamath91/Typography-Controller/main/image.png)
+![Demo of Typography Controller](demo/usage.gif)
 
 ## 🚀 Features
 
